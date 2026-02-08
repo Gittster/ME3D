@@ -167,13 +167,28 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const btn = form.querySelector('[type="submit"]');
         const origText = btn.textContent;
-        btn.textContent = 'Sent!';
+        btn.textContent = 'Sending...';
         btn.disabled = true;
-        setTimeout(() => {
-          btn.textContent = origText;
-          btn.disabled = false;
-          form.reset();
-        }, 2000);
+
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        }).then(response => {
+          if (response.ok) {
+            btn.textContent = 'Sent!';
+            form.reset();
+          } else {
+            btn.textContent = 'Error - Try Again';
+          }
+        }).catch(() => {
+          btn.textContent = 'Error - Try Again';
+        }).finally(() => {
+          setTimeout(() => {
+            btn.textContent = origText;
+            btn.disabled = false;
+          }, 2000);
+        });
       }
     });
   });
