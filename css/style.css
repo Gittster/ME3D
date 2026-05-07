@@ -346,6 +346,16 @@ h4 { font-size: 1.25rem; }
   background: linear-gradient(315deg, var(--primary) 0%, var(--accent) 50%, var(--primary-dark) 100%);
 }
 
+.card-image.product-photo {
+  background-size: cover;
+  background-position: center;
+  font-size: 0;
+}
+
+.card-image.product-photo::after {
+  display: none;
+}
+
 .card-image::after {
   content: '';
   position: absolute;
