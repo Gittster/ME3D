@@ -414,9 +414,18 @@ h4 { font-size: 1.25rem; }
 .feature-icon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--accent);
   transition: transform var(--transition);
+}
+
+.feature-icon svg {
+  width: 40px;
+  height: 40px;
+  stroke: var(--accent);
+  stroke-width: 1.5;
 }
 
 .feature-item:hover .feature-icon {
