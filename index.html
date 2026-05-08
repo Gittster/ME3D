@@ -19,6 +19,8 @@
   <link rel="stylesheet" href="css/style.css">
   <!-- Snipcart Styles -->
   <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.7.1/default/snipcart.css">
+  <!-- Lucide icons -->
+  <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
 <body>
   <!-- Header -->
@@ -87,22 +89,22 @@
       </div>
       <div class="feature-grid">
         <div class="feature-item fade-in">
-          <span class="feature-icon">&#9733;</span>
+          <span class="feature-icon"><i data-lucide="award"></i></span>
           <h3>Premium Quality</h3>
           <p>Every print is carefully calibrated and inspected to ensure the highest quality finish.</p>
         </div>
         <div class="feature-item fade-in">
-          <span class="feature-icon">&#9889;</span>
+          <span class="feature-icon"><i data-lucide="zap"></i></span>
           <h3>Fast Turnaround</h3>
           <p>Quick production times without sacrificing quality. Most orders ship within 3-5 business days.</p>
         </div>
         <div class="feature-item fade-in">
-          <span class="feature-icon">&#9998;</span>
+          <span class="feature-icon"><i data-lucide="pencil-ruler"></i></span>
           <h3>Custom Designs</h3>
           <p>Have a unique idea? We'll work with you to bring your custom designs to life.</p>
         </div>
         <div class="feature-item fade-in">
-          <span class="feature-icon">&#128176;</span>
+          <span class="feature-icon"><i data-lucide="tag"></i></span>
           <h3>Affordable Pricing</h3>
           <p>Competitive prices on all products and custom orders. Quality doesn't have to break the bank.</p>
         </div>
@@ -178,5 +180,9 @@
   <div hidden id="snipcart" data-api-key="YOUR_SNIPCART_API_KEY" data-config-modal-style="side"></div>
   <script src="https://cdn.snipcart.com/themes/v3.7.1/default/snipcart.js" async></script>
   <script src="js/main.js"></script>
+  <script>
+    if (window.lucide) lucide.createIcons();
+    else window.addEventListener('load', () => window.lucide && lucide.createIcons());
+  </script>
 </body>
 </html>
